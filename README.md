@@ -2,8 +2,6 @@
 
 Fake deafens you. (So you still hear things)
 
-![](https://i.imgur.com/d7NVrwc.png)
-
 ![](https://i.imgur.com/nYfnuI2.png)
 
 ![](https://i.imgur.com/CrGVq3H.png)
