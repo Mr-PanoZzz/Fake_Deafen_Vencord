@@ -149,7 +149,7 @@ function fd_button(props: { nameplate?: any; }) {
 export default definePlugin({
     name: "FakeDeafen",
     description: "Fake deafens you while keeping audio stream intact. Includes a toggleable UI bar button option.",
-    authors: [{ name: "Mr_PanoZzz", id: 939129546551210056n }],
+    authors: [{ name: "Mr_PanoZzz", id: 1230932285067366400n }],
     version: "2.0.0",
     settings,
 
