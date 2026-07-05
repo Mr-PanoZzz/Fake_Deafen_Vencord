@@ -1,6 +1,6 @@
 /*
  * Vencord, a Discord client mod
- * Copyright (c) 2024 Vendicated and contributors
+ * Copyright (c) 2026 Vendicated and contributors
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
 
@@ -131,7 +131,9 @@ function fd_icon() {
 }
 
 function fd_button(props: { nameplate?: any; }) {
-    if (!settings.store.pluginEnabled || !settings.store.showButton) return null;
+    const { pluginEnabled, showButton } = settings.use(["pluginEnabled", "showButton"]);
+
+    if (!pluginEnabled || !showButton) return null;
 
     return (
         <Button
@@ -150,7 +152,7 @@ export default definePlugin({
     name: "FakeDeafen",
     description: "Fake deafens you while keeping audio stream intact. Includes a toggleable UI bar button option.",
     authors: [{ name: "Mr_PanoZzz", id: 1230932285067366400n }],
-    version: "2.0.0",
+    version: "2.1.0",
     settings,
 
     flux: {
@@ -222,7 +224,7 @@ export default definePlugin({
 
     patches: [
         {
-            find: ".DISPLAY_NAME_STYLES_COACHMARK)",
+            find: "#{intl::USER_PROFILE_ACCOUNT_POPOUT_BUTTON_A11Y_LABEL}",
             replacement: {
                 match: /children:\[(?=.{0,25}?accountContainerRef)/,
                 replace: "children:[$self.fd_button(arguments[0]),"
